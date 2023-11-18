@@ -1,5 +1,8 @@
-alert('This wosrkss');
+
+import createLayout from "./modules/home";
+
 // first load init page
+createLayout();
 
 //1. add event listener 
 //1.1 when option picked 
