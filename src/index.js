@@ -1,11 +1,31 @@
+import createHome from "./modules/home";
+import { createMenu } from "./modules/menu";
 
-import createLayout from "./modules/home";
+// createMenu();
+createHome();
 
-// first load init page
-createLayout();
+let homePickOptions = document.querySelector(".home-pick-options").childNodes;
+let content = document.querySelector('#content');
+let currentPage = 'home';
+homePickOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    let optionPicked = (option.classList[0]).toLowerCase();
+    if(optionPicked === currentPage){
+        return;
+    }
+    console.log(optionPicked);
+    content.innerHTML = '';
+    switch (optionPicked){
+        case 'home':
+            createHome();
+            currentPage = 'home';
+        case 'menu':
+            createMenu();
+            currentPage = 'menu';
+    }
+  });
+});
 
-//1. add event listener 
-//1.1 when option picked 
-//1.1.1 empty div#content
-//1.1.2 load new module
-
+//load page
+//add event listener on selec-options
+//get each of the
