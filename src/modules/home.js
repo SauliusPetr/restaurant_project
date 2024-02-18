@@ -1,11 +1,15 @@
 import {  footerText,pageTitle,optionList } from "./content";
-import { createPickOptions,createHeader } from "./functions";
+import { createPickOptions,createHeader,addNavigationListener,createNav } from "./functions";
 
 function createHome(){
     let content = document.getElementById('content');
     content.appendChild(createHeader(pageTitle));
-    content.appendChild(createPickOptions(optionList,"home-pick-options"));
+    content.appendChild(createPickOptions(optionList,"home-pick-options nav-list",true));
     content.appendChild(createFooter());
+    createNav(optionList,"nav-pick-options nav-list");
+    let homePickOptions = document.querySelector(".home-pick-options").childNodes;
+    
+    addNavigationListener(homePickOptions);
 }
 
 function createFooter(){
