@@ -24,9 +24,8 @@ function createContact(){
     displayContactDiv.appendChild(contactEmail);
 
     createNav(optionList,"nav-pick-options nav-list");
+    
     contentDiv.appendChild(displayContactDiv);
-
-    addNavigationListener();
 }
 
 export {createContact};

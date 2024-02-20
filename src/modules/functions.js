@@ -49,7 +49,7 @@ function createPickOptions(optionList, divName, displayText) {
 }
 
 function createNav(optionList, divName) {
-  let navDiv = document.querySelector('.nav-bar');
+  let navDiv = document.querySelector('#content');
 
   navDiv.appendChild(createPickOptions(optionList, divName, false));
  let optionDivList = document.querySelector(".nav-pick-options").childNodes;
@@ -59,17 +59,17 @@ function createNav(optionList, divName) {
 
 function addNavigationListener(optionDivList) {
   let content = document.querySelector("#content");
-  let navBar = document.querySelector('.nav-bar');
+  let navBar = document.querySelector('.nav-pick-options');
   // let optionDivList = document.querySelector(".nav-list").childNodes;
   optionDivList.forEach((option) => {
+    
     option.addEventListener("click", () => {
       let optionPicked = option.classList[0].toLowerCase();
-      console.log('ss');
+       
       if (optionPicked === window.currentPage) {
         return;
       }
-      console.log('empty screem');
-      navBar.innerHTML = "";
+      //navBar.innerHTML = "";
       content.innerHTML = "";
       switch (optionPicked) {
         case "home":

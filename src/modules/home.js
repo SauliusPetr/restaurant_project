@@ -6,7 +6,6 @@ function createHome(){
     content.appendChild(createHeader(pageTitle));
     content.appendChild(createPickOptions(optionList,"home-pick-options nav-list",true));
     content.appendChild(createFooter());
-    createNav(optionList,"nav-pick-options nav-list");
     let homePickOptions = document.querySelector(".home-pick-options").childNodes;
     
     addNavigationListener(homePickOptions);

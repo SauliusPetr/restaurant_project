@@ -13,6 +13,5 @@ function createMenu() {
   content.appendChild(
     createPickOptions(menuOptions, "menu-pick-options", true)
   );
-  addNavigationListener();
 }
 export { createMenu };
